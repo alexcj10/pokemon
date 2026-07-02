@@ -289,6 +289,7 @@ Ice, Rock, and Grass types consistently show up as the most defensively vulnerab
 ![Average damage taken by primary type pokemon](images/Average_damage_taken_by_primary_type_pokemon.png)
 
 *Top 5 Most Vulnerable and Top 5 Most Resistant Primary Types:*
+
 | Primary Type | Avg Damage Taken Multiplier |
 |---|---|
 | Ice | 1.20 |
@@ -316,6 +317,7 @@ Steel is the clear winner on the defensive end. An average multiplier of 0.85 me
 ![Average damage taken by secondary type pokemon](images/Average_damage_taken_by_secondary_type_pokemon.png)
 
 *Top 5 Most Vulnerable and Top 5 Most Resistant Secondary Types:*
+
 | Secondary Type | Avg Damage Taken Multiplier |
 |---|---|
 | Ice | 1.26 |

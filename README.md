@@ -371,4 +371,3 @@ The weakest correlation in the entire analysis (r = +0.31). How much EXP a Pokem
 ---
 
 *Analysis conducted on a Pokemon dataset covering 1,032 entries across 8 generations, including Mega Evolutions, Alolan forms, and Galarian forms. All values reflect the raw dataset as provided.*
-# pokemon

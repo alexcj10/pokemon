@@ -83,12 +83,9 @@ The dataset covers all 8 generations (up to Gen 8) and includes alternate forms 
 
 Generations 1 through 3 were extremely consistent, all hovering around 407-408 average BST. Then Generation 4 bumped it up to 451.93, and Generation 6 blew everything out with 508.67. That spike in Gen 6 makes sense because that's when Mega Evolutions were introduced, which brought a bunch of 600+ BST forms into the mix. After that, Gen 7 and 8 settled back down into the 440-450 range.
 
-The takeaway here is that Pokemon haven't been getting consistently stronger over time. The power creep everyone talks about isn't really a straight line.
+The takeaway here is that Pokemon haven't been getting consistently stronger over time. The power creep everyone talks about isn't really a straight line. It's more like spikes tied to specific mechanics (Megas, Primals) rather than a gradual increase.
 
-![Average power of Pokemon changed across generations](images/Average_power_of_Pokemon_changed_across_generations.png) It's more like spikes tied to specific mechanics (Megas, Primals) rather than a gradual increase.
-
-
-
+![Average power of Pokemon changed across generations](images/Average_power_of_Pokemon_changed_across_generations.png)
 ---
 
 ### Legendary vs Non-Legendary
@@ -118,6 +115,14 @@ If you look at the scatter plot, the trend line slopes down clearly. High-BST Po
 
 ![BST vs Catch Rate](images/BST_vs_Catch_Rate.png)
 
+| Catch Rate Bracket | Average BST |
+|---|---|
+| 0-50 (Very Hard) | 506.70 |
+| 51-100 (Hard) | 465.62 |
+| 101-150 (Medium) | 351.68 |
+| 151-200 (Easy) | 322.01 |
+| 201-255 (Very Easy) | 299.17 |
+
 
 
 ---
@@ -131,18 +136,44 @@ The analysis combined both Type 1 (primary) and Type 2 (secondary) average BST v
 - Psychic
 - Steel
 
+Dragon types sitting at the top isn't surprising. A huge chunk of Legendary Pokemon are Dragon-type, and that pulls the average BST way up. Psychic benefits from similar Legendary representation (Mewtwo, Deoxys, Lugia, etc.). Steel types are naturally tanky with high defensive stats.
+
+![Top 10 Strongest Pokemons of Type 1 and Type 2](images/Top_10_Strongest_Pokemons_of_Type_1_and_Type_2.png)
+
+| Type | Avg BST | Category |
+|---|---|---|
+| Dragon | 539.79 | Primary |
+| Ice | 529.33 | Secondary |
+| Dragon | 520.67 | Secondary |
+| Fighting | 519.10 | Secondary |
+| Steel | 498.74 | Secondary |
+| Fire | 490.29 | Secondary |
+| Psychic | 489.71 | Primary |
+| Dark | 487.27 | Secondary |
+| Steel | 482.03 | Primary |
+| Ghost | 480.04 | Secondary |
+
 **Top 3 Weakest Types (by avg BST):**
 - Bug
 - Normal
 - Poison
 
-Dragon types sitting at the top isn't surprising. A huge chunk of Legendary Pokemon are Dragon-type, and that pulls the average BST way up. Psychic benefits from similar Legendary representation (Mewtwo, Deoxys, Lugia, etc.). Steel types are naturally tanky with high defensive stats.
-
 Bug types at the bottom also tracks. Most Bug Pokemon are early-route encounters designed to evolve quickly and be replaced. They're intentionally weak as a game design choice.
 
-![Top 10 Strongest Pokemons of Type 1 and Type 2](images/Top_10_Strongest_Pokemons_of_Type_1_and_Type_2.png)
-
 ![Top 10 Weakest Pokemons of Type 1 and Type 2](images/Top_10_Weakest_Pokemons_of_Type_1_and_Type_2.png)
+
+| Type | Avg BST | Category |
+|---|---|---|
+| Bug | 377.00 | Secondary |
+| Bug | 384.62 | Primary |
+| Normal | 396.70 | Secondary |
+| Poison | 400.41 | Secondary |
+| Normal | 404.61 | Primary |
+| Grass | 418.24 | Primary |
+| Poison | 418.28 | Primary |
+| Water | 422.00 | Secondary |
+| Grass | 422.86 | Secondary |
+| Water | 430.48 | Primary |
 
 
 
@@ -156,13 +187,39 @@ Not all types produce Legendaries equally. The analysis looked at what percentag
 
 For **Type 1 (primary type)**, Dragon and Psychic types have the highest Legendary percentages. These are the "elite" typings in the franchise, and the numbers back it up. Types like Bug, Normal, and Poison have extremely low Legendary representation, if any at all.
 
-For **Type 2 (secondary type)**, the distribution shifts a bit, but Dragon and Psychic still show up prominently.
-
-This matters because when Dragon-type has the highest average BST, part of that is because such a large portion of Dragon Pokemon are Legendaries, which naturally inflates the average. It's not that every Dragon is strong; it's that the strong ones (Rayquaza, Dialga, Giratina, Zygarde) pull the whole type's average up.
-
 ![Legendary % by Type 1 Pokemon](images/Legendary_Percent_by_Type_1_Pokemon.png)
 
+| Primary Type | Legendary % |
+|---|---|
+| Psychic | 38.96% |
+| Dragon | 38.10% |
+| Flying | 25.00% |
+| Steel | 22.22% |
+| Fighting | 16.67% |
+| Fairy | 13.64% |
+| Electric | 13.56% |
+| Dark | 10.87% |
+| Rock | 10.17% |
+| Ground | 9.76% |
+
+For **Type 2 (secondary type)**, the distribution shifts a bit, but Dragon and Psychic still show up prominently.
+
 ![Legendary % by Type 2 Pokemon](images/Legendary_Percent_by_Type_2_Pokemon.png)
+
+| Secondary Type | Legendary % |
+|---|---|
+| Ghost | 25.93% |
+| Fighting | 25.81% |
+| Dragon | 23.33% |
+| Steel | 22.86% |
+| Ice | 22.22% |
+| Fire | 17.65% |
+| Fairy | 17.07% |
+| Flying | 15.18% |
+| Psychic | 14.29% |
+| Grass | 10.71% |
+
+This matters because when Dragon-type has the highest average BST, part of that is because such a large portion of Dragon Pokemon are Legendaries, which naturally inflates the average. It's not that every Dragon is strong; it's that the strong ones (Rayquaza, Dialga, Giratina, Zygarde) pull the whole type's average up.
 
 
 
@@ -181,6 +238,14 @@ The scatter plot colored by generation shows that this relationship holds across
 Weight is influenced by things like whether a Pokemon is physical or special-oriented, whether it's a tank or a sweeper, and what the design aesthetic is. So while there's a connection to BST, treating weight as a strength indicator would lead you wrong plenty of times.
 
 ![BST vs Weight](images/BST_vs_Weight_.png)
+
+| Weight Bracket | Average BST |
+|---|---|
+| 0-20kg (Light) | 353.63 |
+| 21-50kg (Medium-Light) | 447.90 |
+| 51-100kg (Medium) | 498.43 |
+| 101-200kg (Heavy) | 530.18 |
+| 201kg+ (Very Heavy) | 592.24 |
 
 
 
@@ -219,6 +284,25 @@ This part calculated the average damage multiplier each type receives across all
 | Rock | 1.19 |
 | Grass | 1.17 |
 
+Ice, Rock, and Grass types consistently show up as the most defensively vulnerable in both primary and secondary type analysis. They have more weaknesses than resistances across the board.
+
+![Average damage taken by primary type pokemon](images/Average_damage_taken_by_primary_type_pokemon.png)
+
+*Top 5 Most Vulnerable and Top 5 Most Resistant Primary Types:*
+| Primary Type | Avg Damage Taken Multiplier |
+|---|---|
+| Ice | 1.20 |
+| Rock | 1.19 |
+| Grass | 1.17 |
+| Bug | 1.11 |
+| Psychic | 1.11 |
+| ... | ... |
+| Ghost | 0.98 |
+| Poison | 0.98 |
+| Fairy | 0.97 |
+| Electric | 0.97 |
+| Steel | 0.85 |
+
 **Most Resistant Types (lowest avg damage taken):**
 
 | Type | Avg Damage Multiplier |
@@ -227,13 +311,24 @@ This part calculated the average damage multiplier each type receives across all
 | Fairy | 0.97 |
 | Electric | 0.97 |
 
-Ice, Rock, and Grass types consistently show up as the most defensively vulnerable in both primary and secondary type analysis. They have more weaknesses than resistances across the board.
-
 Steel is the clear winner on the defensive end. An average multiplier of 0.85 means Steel types resist a lot of incoming damage on average. If you ever wondered why Steelix, Ferrothorn, and Aegislash feel so hard to take down, this is the statistical reason.
 
-![Average damage taken by primary type pokemon](images/Average_damage_taken_by_primary_type_pokemon.png)
-
 ![Average damage taken by secondary type pokemon](images/Average_damage_taken_by_secondary_type_pokemon.png)
+
+*Top 5 Most Vulnerable and Top 5 Most Resistant Secondary Types:*
+| Secondary Type | Avg Damage Taken Multiplier |
+|---|---|
+| Ice | 1.26 |
+| Rock | 1.18 |
+| Grass | 1.17 |
+| Bug | 1.14 |
+| Fighting | 1.12 |
+| ... | ... |
+| Electric | 1.05 |
+| Poison | 1.04 |
+| Fairy | 1.00 |
+| Ghost | 0.98 |
+| Steel | 0.91 |
 
 
 
@@ -260,6 +355,10 @@ Z-Score measures how far a Pokemon's BST deviates from the dataset average (438.
 | Zamazenta (Crowned Shield) | 720 | +2.33 |
 | Zygarde Complete | 708 | +2.23 |
 
+The top end is all Legendary/Mega/Primal forms. No regular Pokemon even comes close to a Z-Score of +2.0.
+
+![Top 10 Pokemon with the Highest Z-Scores](images/Top_10_Pokemon_with_the_Highest_Z-Scores.png)
+
 **Top 10 Lowest Z-Scores:**
 
 | Pokemon | BST | Z-Score |
@@ -275,9 +374,7 @@ Z-Score measures how far a Pokemon's BST deviates from the dataset average (438.
 | Wurmple | 195 | -2.02 |
 | Ralts | 198 | -1.99 |
 
-The top end is all Legendary/Mega/Primal forms. No regular Pokemon even comes close to a Z-Score of +2.0. On the bottom end, it's mostly early-route Bug types and baby Pokemon. Ralts showing up there is funny because Gardevoir (its final form) is actually quite strong, but base Ralts is one of the weakest Pokemon in the game.
-
-![Top 10 Pokemon with the Highest Z-Scores](images/Top_10_Pokemon_with_the_Highest_Z-Scores.png)
+On the bottom end, it's mostly early-route Bug types and baby Pokemon. Ralts showing up there is funny because Gardevoir (its final form) is actually quite strong, but base Ralts is one of the weakest Pokemon in the game.
 
 ![Top 10 Pokemon with the Lowest Z-Scores](images/Top_10_Pokemon_with_the_Lowest_Z-Scores.png)
 
@@ -296,6 +393,15 @@ Pokemon that need more experience points to hit Level 100 tend to have slightly 
 This makes sense because experience growth rates were designed around game pacing, not competitive balance. A "Slow" growth Pokemon isn't necessarily stronger than a "Fast" growth one. Plenty of powerful Pokemon use Medium Slow or Medium Fast experience curves.
 
 ![Average BST by Experience Required to Reach Level 100](images/Average_BST_by_Experience_Required_to_Reach_Level_100.png)
+
+| Experience Required (Lvl 100) | Average BST |
+|---|---|
+| 600,000 | 411.58 |
+| 800,000 | 388.91 |
+| 1,000,000 | 407.09 |
+| 1,059,860 | 416.82 |
+| 1,250,000 | 530.46 |
+| 1,640,000 | 403.21 |
 
 
 

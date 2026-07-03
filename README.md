@@ -19,7 +19,7 @@
   - [Type Effectiveness and Defensive Vulnerability](#type-effectiveness-and-defensive-vulnerability)
   - [Z-Score Outliers](#z-score-outliers)
   - [Experience Growth and Strength](#experience-growth-and-strength)
-  - [Which Stat Drives Overall Strength?](#which-stat-drives-overall-strength)
+  - [Which Stat Varies Most Across Pokémon?](#which-stat-varies-most-across-pokémon)
 - [Key Takeaways](#key-takeaways)
 - [Tools & Technologies](#tools--technologies)
 
@@ -138,7 +138,7 @@ The analysis combined both Type 1 (primary) and Type 2 (secondary) average BST v
 
 Dragon types sitting at the top isn't surprising. A huge chunk of Legendary Pokemon are Dragon-type, and that pulls the average BST way up. Psychic benefits from similar Legendary representation (Mewtwo, Deoxys, Lugia, etc.). Steel types are naturally tanky with high defensive stats.
 
-![Top 10 Strongest Pokemons of Type 1 and Type 2](images/Top_10_Strongest_Pokemons_of_Type_1_and_Type_2.png)
+![Top 10 Strongest Pokémon of Type 1 and Type 2](images/Top_10_Strongest_Pokemons_of_Type_1_and_Type_2.png)
 
 | Type | Avg BST | Category |
 |---|---|---|
@@ -160,7 +160,7 @@ Dragon types sitting at the top isn't surprising. A huge chunk of Legendary Poke
 
 Bug types at the bottom also tracks. Most Bug Pokemon are early-route encounters designed to evolve quickly and be replaced. They're intentionally weak as a game design choice.
 
-![Top 10 Weakest Pokemons of Type 1 and Type 2](images/Top_10_Weakest_Pokemons_of_Type_1_and_Type_2.png)
+![Top 10 Weakest Pokémon of Type 1 and Type 2](images/Top_10_Weakest_Pokemons_of_Type_1_and_Type_2.png)
 
 | Type | Avg BST | Category |
 |---|---|---|
@@ -409,9 +409,9 @@ This makes sense because experience growth rates were designed around game pacin
 
 ---
 
-### Which Stat Drives Overall Strength?
+### Which Stat Varies Most Across Pokémon?
 
-The correlation heatmap between individual battle stats and BST reveals which stats matter most for overall power:
+The correlation heatmap between individual battle stats and BST shows which stats account for the most variation in overall power:
 
 | Stat | Correlation with BST |
 |------|:--------------------:|
@@ -422,11 +422,13 @@ The correlation heatmap between individual battle stats and BST reveals which st
 | Defense | 0.619 |
 | Speed | 0.561 |
 
-**Attack has the strongest correlation with BST (r = 0.742).** Pokemon with higher overall strength tend to lean into offensive physical power more than any other single stat. Special Attack is right behind at 0.736, so both offensive stats are the biggest drivers.
+**Important context:** BST is the *sum* of these six stats, so each stat is a literal component of the total. These correlations don't tell us which stat "drives" strength — they reflect which stat **varies the most** across the Pokémon roster. A stat with more spread between weak and strong Pokémon will naturally show a higher correlation with the total, even without any design intent behind it.
 
-Speed has the weakest correlation at 0.561. Getting stronger doesn't necessarily mean getting faster. There are plenty of slow, bulky, high-BST Pokemon (Snorlax, Tyranitar, Aggron) that prove this point.
+With that caveat, **Attack (r = 0.742) and Sp. Attack (r = 0.736) show the most variation.** The biggest gap between weak and strong Pokémon tends to show up in offensive stats. A base-stage Bug type might have 30 Attack while a Mega Evolution hits 190 — that's a massive spread that pulls the correlation up.
 
-![Attack has the strongest positive correlation with BST](images/Attack_has_the_strongest_positive_correlation_with_BST.png)
+Speed shows the least variation (r = 0.561). Pokémon are more similar in Speed regardless of how strong they are overall. There are plenty of slow, bulky, high-BST Pokémon (Snorlax, Tyranitar, Aggron) and fast but fragile low-BST ones (Ninjask) that compress the Speed range relative to the total.
+
+![Offensive stats show the most variation relative to BST](images/Attack_has_the_strongest_positive_correlation_with_BST.png)
 
 
 
@@ -452,8 +454,8 @@ With the lowest average damage multiplier (0.85) across all attack types, Steel 
 ### 6. Ice, Rock, and Grass Are Defensively Fragile
 These three types consistently rank as the most vulnerable, taking above-average damage from the widest range of attacking types. Using them competitively requires more careful play and team support.
 
-### 7. Attack Drives Overall Power
-Among the six battle stats, Attack correlates most strongly with BST (r = 0.742). Stronger Pokemon tend to hit harder physically. Speed has the weakest relationship, meaning power and speed don't always go together.
+### 7. Offensive Stats Show the Most Variation
+Among the six battle stats, Attack (r = 0.742) and Sp. Attack (r = 0.736) vary the most across the roster. Since BST is the sum of all six stats, these correlations reflect which stats spread the widest between weak and strong Pokémon — not which stat "causes" strength. Speed varies the least, meaning Pokémon are relatively similar in Speed regardless of overall power.
 
 ### 8. Pokemon Haven't Gotten Consistently Stronger Over Time
 The "power creep" narrative doesn't hold up cleanly. Gens 1-3 had nearly identical average BST. Gen 6 spiked because of Mega Evolutions, then it dropped back down. It's more about mechanic additions than gradual inflation.
